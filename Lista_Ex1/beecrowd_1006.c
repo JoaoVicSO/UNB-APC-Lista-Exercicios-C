@@ -6,9 +6,9 @@ double A, B, C, media;
 
 scanf("%lf %lf %lf", &A, &B, &C);
 
-media = ((A * 2) + (B * 3) + (B * 5) / 3); 
+media = ((A * 2) + (B * 3) + (C * 5) / 10.0); 
 
-printf("MEDIA %1.lf\n", media);
+printf("MEDIA = %.1lf\n", media);
  
     return 0;
 }
