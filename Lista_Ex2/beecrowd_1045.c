@@ -28,12 +28,6 @@ int main() {
 
     }
 
-
-    
-            
-    
-
-
     if (A >= B + C) {
         printf("NAO FORMA TRIANGULO\n");
 
