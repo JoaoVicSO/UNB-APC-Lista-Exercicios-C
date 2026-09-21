@@ -26,7 +26,6 @@ int acharMaior(int a, int b, int c) {
     else 
         return c;
     
-
 } 
 
 // Função que descobre o número do MEIO
@@ -49,9 +48,9 @@ int A, B, C, menor, meio, maior;
     meio = acharMeio(A, B, C);
     maior = acharMaior(A, B, C);
 
-    printf("%d\n %d\n %d\n", menor, meio, maior);
+    printf("%d\n%d\n%d\n", menor, meio, maior);
     printf("\n");
-    printf("%d\n %d\n %d\n", A, B, C);
+    printf("%d\n%d\n%d\n", A, B, C);
 
     return 0;
 
