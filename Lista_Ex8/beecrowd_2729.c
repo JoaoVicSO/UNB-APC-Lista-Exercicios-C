@@ -1,6 +1,7 @@
-
 #include <stdio.h>
 #include <string.h>
+
+#define MAX_N 1000
 
 typedef struct {
 
@@ -8,7 +9,7 @@ typedef struct {
 
 } Alimento;
 
-void Ordenar (Alimento v[], int n) {
+void Ordenar(Alimento v[], int n) {
 
 int i, j;
 
@@ -25,27 +26,31 @@ int i, j;
                 v[j] = aux;
 
             }
-
         }
-
     }
-
 }
 
 int main() {
 
 int t, n, i, primeiro;
+char c;
 
-    scanf("%d", &t);
+    Alimento alimento[MAX_N];
+
+    if (scanf("%d", &t) != 1) 
+        return 0;
 
     while (t--) {
 
-        Alimento alimento[1000];
+        n = 0;
 
-        scanf("%d", &n);
+        do {
 
-        for (i = 0; i < n; i++) 
-            scanf("%20s", alimento[i].nome);
+            scanf("%20s", alimento[n].nome);
+            n++;
+            c = getchar();
+
+        } while (c != '\n' && n < MAX_N);
 
         Ordenar(alimento, n);
 
@@ -55,15 +60,13 @@ int t, n, i, primeiro;
 
             if (i == 0 || strcmp(alimento[i].nome, alimento[i - 1].nome) != 0) {
 
-                if (!primeiro)
+                if (!primeiro) 
                     printf(" ");
-
+                
                 printf("%s", alimento[i].nome);
-
                 primeiro = 0;
-
+                
             }
-
         }
 
         printf("\n");
@@ -71,5 +74,4 @@ int t, n, i, primeiro;
     }
 
     return 0;
-
 }

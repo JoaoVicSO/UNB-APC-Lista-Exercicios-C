@@ -9,7 +9,6 @@ int main () {
 
 		scanf("%hd", &tamanho);
 
-		//Caso o tamanho seja 0, o programa termina;
 		if (tamanho == 0)
 			return 0;
 

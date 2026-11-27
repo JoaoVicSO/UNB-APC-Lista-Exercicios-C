@@ -2,47 +2,66 @@
 
 int main() {
 
-int n, i, j, maior, largura = 0;
-int MatrizQ[15][15];
+int n, i, j, a;
+int matriz[100][100];
 
-    while (scanf("%d", &n) == 1 && n != 0) {
+    while (1) {
+        scanf("%d", &n);
+
+        if (n == 0)
+            break;
+
+        a = 1;
 
         for (i = 0; i < n; i++) {
+
             for (j = 0; j < n; j++) {
 
-                if (i == 0 && j == 0)
-                    MatrizQ[i][j] = 1;
-
-                else if (i == 0)
-                    MatrizQ[i][j] = MatrizQ[i][j - 1] * 2;
-
-                else
-                    MatrizQ[i][j] = MatrizQ[i - 1][j] * 2;
+                matriz[i][j] = a;
+                a *= 2;
+                
             }
+
+            a = matriz[i][0] * 2;
         }
 
-        maior = MatrizQ[n - 1][n - 1];
+        int b = 0;
+        int t = matriz[n - 1][n - 1];
 
-        while (maior > 0) {
+        do {
 
-            largura++;
-            maior /= 10;
+            t = t / 10;
+            b++;
 
-        }
+        } while (t > 0);
 
         for (i = 0; i < n; i++) {
-
             for (j = 0; j < n; j++) {
+
+                int l = 0;
+                int k = matriz[i][j];
+
+                do {
+
+                    k = k / 10;
+                    l++;
+
+                } while (k > 0);
+
+
+                for (int m = l; m < b; m++) 
+                    printf(" ");
 
                 if (j == 0)
-                    printf("%*d", largura, MatrizQ[i][j]);
+                    printf("%d", matriz[i][j]);
 
                 else
-                    printf(" %*d", largura, MatrizQ[i][j]);
-                    
+                    printf(" %d", matriz[i][j]);
+
             }
 
             printf("\n");
+
         }
 
         printf("\n");
